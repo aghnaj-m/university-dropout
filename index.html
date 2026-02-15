@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <script src="https://cdn.jsdelivr.net/npm/p5@1.11.11/lib/p5.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/p5@1.11.11/lib/addons/p5.sound.min.js"></script>
+    
+    
+    
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <meta charset="utf-8" />
+
+  </head>
+  <body>
+    <main>
+      <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Dropout Trajectories</title>
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
+
+  <style>
+    body { font-family: 'Helvetica', 'Arial', sans-serif; max-width: 900px; margin: 40px auto; line-height: 1.6; color: #333; }
+    h1 { color: #2c3e50; border-bottom: 2px solid #eee; padding-bottom: 10px; }
+    h2 { color: #e74c3c; margin-top: 0; font-size: 1.2rem; font-weight: normal; }
+    .container { background: #fafafa; padding: 20px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
+    .viz-container { display: flex; justify-content: center; margin: 30px 0; border: 1px solid #ddd; background: white; }
+    .encoding-box { background: #eef9ff; padding: 20px; border-left: 5px solid #2980b9; margin-top: 30px; }
+    strong { color: #2980b9; }
+  </style>
+</head>
+<body>
+
+  <h1>Visualizing Academic Failure: Pathways to Dropout</h1>
+
+  <h2>
+    <strong>Research Question:</strong> 
+    How do academic performance trajectories (passing vs. failing) in the first and second semesters influence the final outcome (Dropout vs. Enrollment) across different study majors?
+  </h2>
+
+  <p>
+    The visualization below (Sunburst Chart) traces the flow of students from their chosen Major (Center), through their First and Second Semester performance (Middle Rings), to their Final Status (Outer Ring).
+  </p>
+
+  <div class="viz-container" id="canvas-container">
+    </div>
+
+  <div class="encoding-box">
+    <h3>Visual Encoding & Design Choices</h3>
+    <p>To represent this hierarchical data, the following visual variables were mapped:</p>
+    <ul>
+      <li><strong>Arc Length (Angle):</strong> Represents the <em>Quantity of Students</em>. Larger slices indicate a higher number of students following that specific path.</li>
+      <li><strong>Radial Position (Layers):</strong> Represents <em>Time/Progression</em>. 
+        <ul>
+          <li>Center: Study Major</li>
+          <li>Inner Ring: 1st Semester Result</li>
+          <li>Middle Ring: 2nd Semester Result</li>
+          <li>Outer Ring: Final Outcome</li>
+        </ul>
+      </li>
+      <li><strong>Color (Hue):</strong> Represents <em>Categorical Status</em>.
+        <ul>
+          <li><strong>Green:</strong> Academic Success (Passed Semesters).</li>
+          <li><strong>Yellow/Orange:</strong> Academic Struggle (Failed Semesters).</li>
+          <li><strong>Red:</strong> Negative Outcome (Dropout).</li>
+          <li><strong>Blue:</strong> Positive Outcome (Graduate/Enrolled).</li>
+        </ul>
+      </li>
+      <li><strong>Adjacency:</strong> Represents the <em>Parent-Child Relationship</em>. A student who fails Semester 1 (Parent Node) branches out into either recovering or failing Semester 2 (Child Nodes).</li>
+    </ul>
+  </div>
+    </main>
+    <script src="sketch.js"></script>
+  </body>
+</html>
